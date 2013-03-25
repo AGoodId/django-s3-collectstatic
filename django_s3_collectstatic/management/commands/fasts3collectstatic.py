@@ -1,13 +1,4 @@
-from __future__ import with_statement
-
 import os
-import sys
-from optparse import make_option
-
-from django.core.files.storage import FileSystemStorage
-from django.core.management.base import CommandError, NoArgsCommand
-from django.utils.encoding import smart_str, smart_unicode
-from django.utils.datastructures import SortedDict
 from django.conf import settings
 
 if 'staticfiles' in settings.INSTALLED_APPS:
