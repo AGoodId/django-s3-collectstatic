@@ -14,6 +14,7 @@ class Command(collectstatic.Command):
         """
         Checks if the target file should be deleted if it already exists
         """
+        self.storage.preload_metadata = True
         if self.storage.exists(prefixed_path):
             try:
                 # attempt the S3 hash first
