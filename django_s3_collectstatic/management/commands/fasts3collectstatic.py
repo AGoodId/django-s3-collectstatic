@@ -9,8 +9,6 @@ from django.core.management.base import CommandError, NoArgsCommand
 from django.utils.encoding import smart_str, smart_unicode
 from django.utils.datastructures import SortedDict
 
-from django.contrib.staticfiles import finders, storage
-
 from django.contrib.staticfiles.management.commands import collectstatic
 import hashlib
 
