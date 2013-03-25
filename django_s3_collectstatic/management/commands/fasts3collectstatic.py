@@ -8,10 +8,13 @@ from django.core.files.storage import FileSystemStorage
 from django.core.management.base import CommandError, NoArgsCommand
 from django.utils.encoding import smart_str, smart_unicode
 from django.utils.datastructures import SortedDict
+from django.conf import settings
 
-from django.contrib.staticfiles import finders, storage
+if 'staticfiles' in settings.INSTALLED_APPS:
+    from staticfiles.management.commands import collectstatic
+else:
+    from django.contrib.staticfiles.management.commands import collectstatic
 
-from django.contrib.staticfiles.management.commands import collectstatic
 import hashlib
 
 class Command(collectstatic.Command):
