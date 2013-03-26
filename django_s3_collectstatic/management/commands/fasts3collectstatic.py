@@ -14,7 +14,7 @@ class Command(collectstatic.Command):
         """
         Checks if the target file should be deleted if it already exists
         """
-        if not self.storage.preload_metadata:
+        if hasattr(self.storage, 'preload_metadata') and not self.storage.preload_metadata:
             self.log('Forcing storage to preload metadata')
             self.storage.preload_metadata = True
 
